@@ -1,0 +1,32 @@
+training:
+  batch_size: 1024
+  learning_rate: 0.001
+  num_workers: 4
+  epochs: 100
+  games_per_epoch: 50
+  checkpoint_interval: 50
+  eval_interval: 100
+  eval_games: 40
+  promotion_threshold: 0.55
+  checkpoint_dir: "data/checkpoints"
+  resume: true
+  auto_promote: true
+
+mcts:
+  simulations: 800
+  c_puct: 1.5
+  time_budget_ms: 1000
+
+endgame:
+  enabled: true
+  wall_threshold: 4
+  max_solve_time_ms: 50
+
+engine:
+  max_walls: 10
+  board_size: 9
+
+logging:
+  level: "INFO"
+  log_dir: "data/logs"
+  experiments_dir: "data/experiments"

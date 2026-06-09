@@ -1,0 +1,6 @@
+2026-06-09 17:44:58,992 - QuoridorAI - INFO - Starting Evaluation between dummy and minimax over 2 games
+2026-06-09 17:45:00,212 - QuoridorAI - WARNING - Weights dummy not found. Using random initialized model!
+2026-06-09 17:45:16,337 - QuoridorAI - INFO - Game 1: Model B wins as Player 1
+2026-06-09 17:45:27,585 - QuoridorAI - INFO - Game 2: Model B wins as Player 0
+2026-06-09 17:45:27,585 - QuoridorAI - INFO - Final Score: Model A (dummy): 0 | Model B (minimax): 2
+2026-06-09 17:45:27,585 - QuoridorAI - INFO - Elo Ratings -> dummy: 1169.5 | minimax: 1230.5

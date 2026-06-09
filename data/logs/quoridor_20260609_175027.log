@@ -1,0 +1,4 @@
+2026-06-09 17:50:27,257 - QuoridorAI - INFO - Starting Game vs AI (5-5). Human is player 0
+2026-06-09 17:50:28,349 - QuoridorAI - WARNING - Could not load model weights from 5-5: [Errno 2] No such file or directory: '5-5'
+2026-06-09 17:50:28,349 - QuoridorAI - WARNING - Using randomly initialized model!
+2026-06-09 17:56:14,808 - QuoridorAI - INFO - Game over.

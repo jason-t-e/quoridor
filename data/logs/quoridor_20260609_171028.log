@@ -1,0 +1,17 @@
+2026-06-09 17:10:28,668 - QuoridorAI - INFO - Starting Quoridor AI Training Pipeline
+2026-06-09 17:10:28,668 - QuoridorAI - INFO - Using device: cpu
+2026-06-09 17:10:29,766 - QuoridorAI - INFO - --- Epoch 1 ---
+2026-06-09 17:10:29,766 - QuoridorAI - INFO - Starting self-play...
+2026-06-09 17:11:02,459 - QuoridorAI - INFO - Buffer size: 136
+2026-06-09 17:11:02,460 - QuoridorAI - INFO - Training on batch...
+2026-06-09 17:11:02,656 - QuoridorAI - INFO - Metric updated: policy_loss = 4.953003406524658
+2026-06-09 17:11:02,656 - QuoridorAI - INFO - Metric updated: value_loss = 1.0178041458129883
+2026-06-09 17:11:02,708 - QuoridorAI - INFO - Saved checkpoint to data/checkpoints\model_ep1.pt
+2026-06-09 17:11:02,708 - QuoridorAI - INFO - --- Epoch 2 ---
+2026-06-09 17:11:02,708 - QuoridorAI - INFO - Starting self-play...
+2026-06-09 17:11:28,039 - QuoridorAI - INFO - Buffer size: 275
+2026-06-09 17:11:28,039 - QuoridorAI - INFO - Training on batch...
+2026-06-09 17:11:28,099 - QuoridorAI - INFO - Metric updated: policy_loss = 3.653838634490967
+2026-06-09 17:11:28,099 - QuoridorAI - INFO - Metric updated: value_loss = 0.8354610800743103
+2026-06-09 17:11:28,124 - QuoridorAI - INFO - Saved checkpoint to data/checkpoints\model_ep2.pt
+2026-06-09 17:11:28,125 - QuoridorAI - INFO - Training pipeline complete.

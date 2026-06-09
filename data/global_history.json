@@ -1,0 +1,85 @@
+{
+  "P0:0_4|P1:8_4|W0:10|W1:10|H:[]|V:[]|Player:0": {
+    "pawn_positions": {
+      "0": [
+        0,
+        4
+      ],
+      "1": [
+        8,
+        4
+      ]
+    },
+    "walls_remaining": {
+      "0": 10,
+      "1": 10
+    },
+    "h_walls": [],
+    "v_walls": [],
+    "current_player": 0,
+    "visit_count": 11,
+    "winner_counts": {
+      "0": 6,
+      "1": 4
+    },
+    "moves": {
+      "Wall(1, 0, h)": {
+        "next_state_key": "P0:0_4|P1:8_4|W0:9|W1:10|H:[1_0]|V:[]|Player:1",
+        "play_count": 1
+      },
+      "Wall(2, 3, v)": {
+        "next_state_key": "P0:0_4|P1:8_4|W0:9|W1:10|H:[]|V:[2_3]|Player:1",
+        "play_count": 1
+      },
+      "Pawn(0, 3)": {
+        "next_state_key": "P0:0_3|P1:8_4|W0:10|W1:10|H:[]|V:[]|Player:1",
+        "play_count": 2
+      },
+      "Pawn(1, 4)": {
+        "next_state_key": "P0:1_4|P1:8_4|W0:10|W1:10|H:[]|V:[]|Player:1",
+        "play_count": 1
+      },
+      "Wall(2, 0, v)": {
+        "next_state_key": "P0:0_4|P1:8_4|W0:9|W1:10|H:[]|V:[2_0]|Player:1",
+        "play_count": 1
+      },
+      "Wall(0, 2, h)": {
+        "next_state_key": "P0:0_4|P1:8_4|W0:9|W1:10|H:[0_2]|V:[]|Player:1",
+        "play_count": 1
+      },
+      "Wall(6, 0, h)": {
+        "next_state_key": "P0:0_4|P1:8_4|W0:9|W1:10|H:[6_0]|V:[]|Player:1",
+        "play_count": 1
+      },
+      "Wall(1, 2, h)": {
+        "next_state_key": "P0:0_4|P1:8_4|W0:9|W1:10|H:[1_2]|V:[]|Player:1",
+        "play_count": 1
+      },
+      "Wall(4, 3, h)": {
+        "next_state_key": "P0:0_4|P1:8_4|W0:9|W1:10|H:[4_3]|V:[]|Player:1",
+        "play_count": 1
+      },
+      "Wall(5, 7, h)": {
+        "next_state_key": "P0:0_4|P1:8_4|W0:9|W1:10|H:[5_7]|V:[]|Player:1",
+        "play_count": 1
+      }
+    }
+  },
+  "P0:0_4|P1:8_4|W0:9|W1:10|H:[1_0]|V:[]|Player:1": {
+    "pawn_positions": {
+      "0": [
+        0,
+        4
+      ],
+      "1": [
+        8,
+        4
+      ]
+    },
+    "walls_remaining": {
+      "0": 9,
+      "1": 10
+    },
+    "h_walls": [
+      [
+        

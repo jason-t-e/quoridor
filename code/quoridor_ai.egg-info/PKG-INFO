@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: quoridor-ai
+Version: 0.1.0
+Summary: A Quoridor AI using AlphaZero and SINN architectures.
+Requires-Dist: torch>=2.0.0
+Requires-Dist: numpy>=1.24.0
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: pytest>=8.5.0
+Requires-Dist: pygame>=2.6.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: pytest-asyncio; extra == "dev"
