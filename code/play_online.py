@@ -73,6 +73,26 @@ def main():
         print("Interrupted by user. Exiting...")
     except Exception as e:
         print(f"An error occurred: {e}")
+        # Add debugging logs for Colab
+        try:
+            import os
+            debug_dir = "/content/drive/MyDrive/quoridor_debug"
+            os.makedirs(debug_dir, exist_ok=True)
+            
+            if hasattr(adapter, 'page') and adapter.page is not None:
+                screenshot_path = os.path.join(debug_dir, f"error_screenshot_{int(time.time())}.png")
+                html_path = os.path.join(debug_dir, f"error_page_{int(time.time())}.html")
+                
+                adapter.page.screenshot(path=screenshot_path)
+                with open(html_path, "w", encoding="utf-8") as html_file:
+                    html_file.write(adapter.page.content())
+                    
+                print(f"!!! DEBUG INFO SAVED !!!")
+                print(f"Screenshot saved to: {screenshot_path}")
+                print(f"HTML state saved to: {html_path}")
+        except Exception as debug_e:
+            print(f"Failed to capture debug info: {debug_e}")
+            
     finally:
         adapter.close()
         print("Adapter closed. Goodbye.")

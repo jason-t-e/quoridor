@@ -1,7 +1,7 @@
 # Online Play Settings
 online_play:
-  # Target website to play against (e.g., 'example-quoridor.com')
-  target_website: "example-quoridor.com"
+  # Target website to play against (e.g., 'https://quoridor.sambaldwin.dev/')
+  target_website: "https://quoridor.sambaldwin.dev/"
   
   # Account settings
   mode: "guest" # Options: 'guest', 'account'
