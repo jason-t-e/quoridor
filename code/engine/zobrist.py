@@ -16,7 +16,7 @@ Components hashed:
 import random
 
 # Fixed seed so hashes are deterministic across runs and processes.
-_RNG = random.Random(0xDEADBEEF_QUORIDOR)
+_RNG = random.Random(0xDEADBEEF42)
 
 def _rand64() -> int:
     return _RNG.getrandbits(64)

@@ -1,0 +1,30 @@
+# Online Play Settings
+online_play:
+  # Target website to play against (e.g., 'example-quoridor.com')
+  target_website: "example-quoridor.com"
+  
+  # Account settings
+  mode: "guest" # Options: 'guest', 'account'
+  credentials:
+    username: ""
+    password: ""
+  
+  # Bot behavior
+  games_to_play: 10
+  time_limit_per_move_ms: 2000
+
+# Model Management
+models:
+  # Directory to save models to
+  checkpoint_dir: "/content/drive/MyDrive/quoridor_models/"
+  
+  # Checkpointing settings
+  save_interval: 100        # Save a regular checkpoint every N games
+  super_save_interval: 1000 # Save a permanent "super" checkpoint every M games
+  
+  # The model to load and play with (will default to latest if empty or 'latest')
+  active_model: "latest"
+  
+  # List of models to delete from storage (to save space)
+  delete_models:
+    - "quoridor_net_old.pt"
