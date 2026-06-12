@@ -10,9 +10,10 @@ online_play:
     password: ""
   
   # Bot behavior
-  games_to_play: 10
+  games_to_play: 4                 # Total number of games to play this session
   time_limit_per_move_ms: 2000
-  
+  max_parallel_games: 2            # How many games to run simultaneously (set to 1 to disable parallelism)
+
   # Set this to a directory to record webm videos of the games
   record_video_dir: "/content/drive/MyDrive/quoridor_videos/"
 
@@ -31,3 +32,7 @@ models:
   # List of models to delete from storage (to save space)
   delete_models:
     - "quoridor_net_old.pt"
+
+# MCTS (AlphaZero search) settings
+mcts:
+  simulations: 100   # Higher = stronger play but slower per move
