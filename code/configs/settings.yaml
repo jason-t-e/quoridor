@@ -12,6 +12,9 @@ online_play:
   # Bot behavior
   games_to_play: 10
   time_limit_per_move_ms: 2000
+  
+  # Set this to a directory to record webm videos of the games
+  record_video_dir: "/content/drive/MyDrive/quoridor_videos/"
 
 # Model Management
 models:

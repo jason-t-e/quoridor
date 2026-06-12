@@ -3,6 +3,11 @@ import yaml
 import time
 from utils.model_manager import ModelManager
 from adapters.example_site_adapter import ExampleSiteAdapter
+import torch
+from search.mcts import MCTS
+from engine.game import QuoridorGame
+from models.board_encoder import decode_action
+from training.model_registry import load_best_model
 
 def main():
     parser = argparse.ArgumentParser(description="Play Quoridor Online")
@@ -23,6 +28,18 @@ def main():
     # model = model_manager.load_active_model(QuoridorNet)
     print(f"Active model: {model_manager.get_active_model_path()}")
 
+    # Initialize MCTS Bot
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    champion_result = load_best_model(device=device)
+    if champion_result is not None:
+        model, _ = champion_result
+        model.eval()
+        print("Successfully loaded AlphaZero model.")
+        mcts = MCTS(model, num_simulations=settings.get('mcts', {}).get('simulations', 100))
+    else:
+        print("Warning: No trained AlphaZero model found. Will play random moves.")
+        mcts = None
+
     # Initialize Adapter
     adapter = ExampleSiteAdapter(settings)
     
@@ -41,14 +58,25 @@ def main():
             print(f"--- Starting Game {game_num} (Total lifetime games: {total_games_played}) ---")
             
             game_experiences = [] # Store (state, action, reward)
+            local_game = QuoridorGame() # Keep local state since ExampleSiteAdapter is incomplete
             
-            while not adapter.is_game_over():
+            while not adapter.is_game_over() and not local_game.is_terminal:
                 if adapter.is_my_turn():
                     state = adapter.get_board_state()
-                    # action = model.predict(state) # Use the loaded model here
-                    action = "dummy_action" # Placeholder
+                    if state is None:
+                        # Fallback to local game state for Example adapter
+                        state = local_game.board
+                    
+                    if mcts is not None:
+                        action_probs = mcts.search(state)
+                        best_action = max(action_probs.items(), key=lambda x: x[1])[0]
+                        action = decode_action(state, best_action)
+                    else:
+                        import random
+                        action = random.choice(state.get_legal_moves())
                     
                     adapter.make_move(action)
+                    local_game.apply_move(action)
                     
                     # Store experience
                     # game_experiences.append((state, action))

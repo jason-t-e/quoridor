@@ -23,7 +23,17 @@ class ExampleSiteAdapter(OnlinePlatformAdapter):
         self.playwright = sync_playwright().start()
         # Use headless=True for Colab
         self.browser = self.playwright.chromium.launch(headless=True)
-        self.page = self.browser.new_page()
+        
+        record_video_dir = self.settings.get('online_play', {}).get('record_video_dir')
+        if record_video_dir:
+            import os
+            os.makedirs(record_video_dir, exist_ok=True)
+            self.context = self.browser.new_context(record_video_dir=record_video_dir)
+            print(f"Video recording enabled. Saving to: {record_video_dir}")
+        else:
+            self.context = self.browser.new_context()
+            
+        self.page = self.context.new_page()
         
         print(f"Navigating to {self.website}...")
         try:
@@ -67,6 +77,8 @@ class ExampleSiteAdapter(OnlinePlatformAdapter):
         return False
 
     def close(self):
+        if hasattr(self, 'context') and self.context:
+            self.context.close()
         if self.browser:
             self.browser.close()
         if self.playwright:
