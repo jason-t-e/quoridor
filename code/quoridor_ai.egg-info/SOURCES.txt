@@ -1,9 +1,12 @@
 pyproject.toml
+code/adapters/base_adapter.py
+code/adapters/example_site_adapter.py
 code/engine/board.py
 code/engine/game.py
 code/engine/moves.py
 code/engine/pathfinder.py
 code/engine/rules.py
+code/engine/zobrist.py
 code/evaluation/elo.py
 code/models/board_encoder.py
 code/models/quoridor_net.py
@@ -12,9 +15,11 @@ code/quoridor_ai.egg-info/SOURCES.txt
 code/quoridor_ai.egg-info/dependency_links.txt
 code/quoridor_ai.egg-info/requires.txt
 code/quoridor_ai.egg-info/top_level.txt
+code/search/endgame_solver.py
 code/search/mcts.py
 code/search/minimax.py
 code/search/random_bot.py
+code/tests/test_co_play_and_history.py
 code/tests/test_engine_random.py
 code/tests/test_mcts.py
 code/tests/test_nn.py
@@ -22,7 +27,10 @@ code/tests/test_path.py
 code/tests/test_pawn.py
 code/tests/test_wall.py
 code/training/experience_buffer.py
+code/training/model_registry.py
 code/training/self_play_worker.py
 code/training/trainer.py
 code/ui/pygame_gui.py
+code/utils/history_tracker.py
 code/utils/logger.py
+code/utils/model_manager.py

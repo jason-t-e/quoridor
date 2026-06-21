@@ -82,7 +82,7 @@ class MCTS:
         if len(node.legal_moves) == 0:
             return 0.0 # Should not happen unless terminal
             
-        tensor = torch.tensor(board_to_tensor(board)).unsqueeze(0)
+        tensor = torch.tensor(board_to_tensor(board).copy()).unsqueeze(0)
         # Dummy strategy vector
         strat = torch.zeros((1, 16), dtype=torch.float32)
         
